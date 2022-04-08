@@ -1,0 +1,26 @@
+:host {
+    box-sizing: border-box;
+    padding: 10px;
+    .title {
+        width: 100%;
+        max-width: 600px;
+        margin: 10px auto;
+    }
+
+    mat-card {
+        width: 100%;
+        max-width: 600px;
+        margin: 10px auto;
+    }
+
+    .balance {
+        margin-top: 20px;
+        display: inline-block;
+    }
+
+    .error {
+        color: red;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}

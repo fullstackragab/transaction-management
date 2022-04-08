@@ -1,0 +1,26 @@
+:host {
+    box-sizing: border-box;
+    padding: 10px;
+    .title {
+        width: 100%;
+        max-width: 600px;
+        margin: 10px auto;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 600px;
+        margin: 10px auto;
+
+        button {
+            max-width: 200px;
+            margin-top: 10px;
+        }
+        .error {
+            color: red;
+            margin-top: 20px;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+<div class="title">Submit new transaction</div>
+<form (ngSubmit)="onSubmit()" [formGroup]="newTransactionForm">
+    <mat-form-field>
+        <label for="accountId">Account ID</label>
+        <input data-type="account-id" matInput id="accountId" type="text" formControlName="accountId" />
+    </mat-form-field>
+
+    <mat-form-field>
+        <label for="amount">Amount</label>
+        <input data-type="amount" matInput id="amount" type="number" formControlName="amount" />
+    </mat-form-field>
+    <button mat-raised-button data-type="transaction-submit" color="primary" type="submit">Submit</button>
+    <div class="error" *ngIf="error">{{ error }}</div>
+</form>
