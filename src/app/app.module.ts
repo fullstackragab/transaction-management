@@ -8,7 +8,9 @@ import { NewTransactionModule } from './modules/new-transaction/new-transaction.
 import { TransactionHistoryModule } from './modules/transaction-history/transaction-history.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoaderInterceptor } from './loader-interceptor.service';
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,13 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     NewTransactionModule,
     TransactionHistoryModule,
+    SharedModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([])
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

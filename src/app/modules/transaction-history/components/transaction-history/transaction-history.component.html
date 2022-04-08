@@ -5,11 +5,10 @@
     <mat-card *ngIf="i === 0" role="listitem" data-type="transaction"
     data-account-id="${transaction.account-id}"
     data-amount="${transaction.amount}"
-    data-balance="${transaction.amount}">Transferred ${{ transaction.amount }} from account {{ transaction.account_id }}<span class="balance">The current account balance {{ 0 }}</span></mat-card>
+    data-balance="${transaction.balance">Transferred ${{ transaction.amount }} from account {{ transaction.account_id }}<span class="balance">The current account balance {{ transaction.balance }}</span></mat-card>
     
     <mat-card *ngIf="i !== 0" role="listitem" data-type="transaction"
     data-account-id="${transaction.account-id}"
-    data-amount="${transaction.amount}"
-    data-balance="${0}">Transferred ${{ transaction.amount }} from account {{ transaction.account_id }}</mat-card>
+    data-amount="${transaction.amount}">Transferred ${{ transaction.amount }} from account {{ transaction.account_id }}</mat-card>
 
-</ng-container>  
+</ng-container>
