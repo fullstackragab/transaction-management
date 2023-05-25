@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { catchError, EMPTY, first } from 'rxjs';
 import { NewTransactionService } from '../../services/new-transaction.service';
 
@@ -9,9 +9,9 @@ import { NewTransactionService } from '../../services/new-transaction.service';
   styleUrls: ['./new-transation.component.scss']
 })
 export class NewTransationComponent implements OnInit {
-  newTransactionForm = new FormGroup({
-    accountId: new FormControl('', Validators.required),
-    amount: new FormControl('', Validators.required)
+  newTransactionForm = new UntypedFormGroup({
+    accountId: new UntypedFormControl('', Validators.required),
+    amount: new UntypedFormControl('', Validators.required)
   })
   @Output() newTransactionCreated = new EventEmitter()
   @ViewChild(FormGroupDirective) newTransactionFormGroupDirective!: FormGroupDirective;
